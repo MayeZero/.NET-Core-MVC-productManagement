@@ -1,0 +1,44 @@
+﻿@model ProductInfoViewModel
+@{
+    ViewData["Title"] = "View the productinfo list information";
+}
+<div class="panel panel-default todo-panel">
+    <div class="panel-heading">@ViewData["Title"]</div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>&#x2714;</td>
+                <td>ProductID</td>
+                <td>ProductName</td>
+                <td>Price</td>
+                <td>BrandCHName</td>
+                <td>BrandENName</td>
+                <td>Description</td>
+                <td>CategoryName</td>
+                <td>CreatTime</td>
+            </tr>
+        </thead>
+        @foreach (var product in Model.ProductInfos)
+        {
+    <tr>
+        <td>
+        </td>
+        <td>@product.ProductID</td>
+        <td>@product.ProductName</td>
+        <td>@product.Price</td>
+        <td>@product.BrandCHName</td>
+        <td>@product.BrandENName</td>
+        <td>@product.Description</td>
+        <td>@product.CategoryName</td>
+        <td>@product.CreatTime</td>
+
+    </tr>
+        }
+    </table>
+
+    <div class="panel-footer add-item-form">
+        <!-- TODO: Add item form -->
+    </div>
+</div>
+

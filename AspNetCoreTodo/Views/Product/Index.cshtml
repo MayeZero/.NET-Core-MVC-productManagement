@@ -1,0 +1,36 @@
+﻿@model ProductViewModel
+@{
+    ViewData["Title"] = "View the product list information";
+}
+    <div class="panel panel-default todo-panel">
+        <div class="panel-heading">@ViewData["Title"]</div>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>&#x2714;</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                </tr>
+            </thead>
+
+            @foreach (var product in Model.Products)
+            {
+                <tr>
+                    <td>
+                        <form asp-action="TakeOff" method="POST">
+                            <input type="checkbox" class="off-checkbox">
+                            <input type="hidden" name="id" value="@product.ProductID">
+                        </form>
+                    </td>
+                    <td>@product.ProductName</td>
+                    <td>@product.Price</td>
+                </tr>
+            }
+        </table>
+
+        <div class="panel-footer add-item-form">
+            <!-- TODO: Add item form -->
+            @await Html.PartialAsync("AddProductPartial", new Product()) 
+        </div>
+    </div>

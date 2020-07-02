@@ -1,0 +1,12 @@
+﻿@model Product
+
+    <form asp-action="AddProduct" method="POST">
+        <label>Add a new product:</label>
+        <label>BrandID:</label>
+        <input asp-for="BrandID">
+        <label>ProductName</label>
+        <input asp-for="ProductName">
+        <label>Price</label>
+        <input asp-for="Price">
+        <button type="submit">Add</button>
+    </form>
